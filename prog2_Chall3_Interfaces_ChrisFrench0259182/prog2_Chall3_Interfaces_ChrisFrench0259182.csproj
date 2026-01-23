@@ -44,10 +44,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="enemy.cs" />
-    <Compile Include="IAgressiveMoveStrategy.cs" />
+    <Compile Include="AgressiveMoveStrategy.cs" />
     <Compile Include="IMoveStrategy.cs" />
-    <Compile Include="IPassiveMoveStrategy.cs" />
-    <Compile Include="IRandomMoveStrategy.cs" />
+    <Compile Include="PassiveMoveStrategy.cs" />
+    <Compile Include="RandomMoveStrategy.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

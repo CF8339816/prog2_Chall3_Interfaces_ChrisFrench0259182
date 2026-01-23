@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prog2_Chall3_Interfaces_ChrisFrench0259182
 {
-    internal interface IAgressiveMoveStrategy
+    internal class AgressiveMoveStrategy
     {
     }
 }
