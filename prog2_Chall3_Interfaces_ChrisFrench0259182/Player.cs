@@ -6,7 +6,31 @@ using System.Threading.Tasks;
 
 namespace prog2_Chall3_Interfaces_ChrisFrench0259182
 {
-    internal class Player
+   
+    public class Player
     {
+        public Position Position;
+        public ConsoleColor Color;
+
+        public Player(Position position, ConsoleColor color)
+        {
+            Position = position;
+            Color = color;
+        }
     }
+
+
+    public struct Position
+    {
+        public int x;
+        public int y;
+
+        public Position(int x, int y)
+        {
+            this.x = x;
+            this.y = y;
+        }
+    }
+
 }
+

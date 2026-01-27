@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace prog2_Chall3_Interfaces_ChrisFrench0259182
 {
-    internal interface ImoveStrategy
+    public interface IMoveStrategy
     {
+        Position Move(Position currentPosition);
     }
 }
