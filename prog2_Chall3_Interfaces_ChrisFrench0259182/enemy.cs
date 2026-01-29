@@ -12,7 +12,7 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
         public ConsoleColor Color;
         public IMoveStrategy _moveStrategy;
 
-        public Enemy(Position position, ConsoleColor color, IMoveStrategy strategy)
+        public Enemy(Position position, ConsoleColor color, IMoveStrategy strategy) //setsenemy positioon , colour , and the  movement strat usedd
         {
             Position = position;
             Color = color;
@@ -21,7 +21,8 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
 
         public void Move()
         {
-            Position = _moveStrategy.Move(Position);
+          
+            Position = _moveStrategy.Move(Position, Console.WindowWidth, Console.WindowHeight); // checks enemy movement against established boundaries
         }
     }
 }
