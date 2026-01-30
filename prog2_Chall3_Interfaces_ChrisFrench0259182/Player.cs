@@ -19,7 +19,7 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
         {
             Position = position;
             Color = color;
-            Console.Write(" ");
+            //Console.Write(" ");
         }
     }
 

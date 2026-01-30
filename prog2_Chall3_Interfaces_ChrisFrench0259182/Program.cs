@@ -5,6 +5,7 @@ using System.Linq;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
+using static System.Net.Mime.MediaTypeNames;
 
 namespace prog2_Chall3_Interfaces_ChrisFrench0259182
 {
@@ -13,7 +14,9 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
         
         public static int maxX = 11; //sets max  x range 
         public static int maxY = 11; // sets max  y range 
-        static bool isPlaying = true;
+        public static int nextX;
+        public static int nextY;
+        //  static bool isPlaying = true;
 
 
 
@@ -29,8 +32,8 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
             
             Enemy enemy = new Enemy(new Position(0, 0), ConsoleColor.Red, random); // sets enemy spawn and colour and preset movement style
 
-            while (isPlaying)
-            {
+            //while (isPlaying)
+            //{
                 DrawPlayer();
                 DrawEnemy();
 
@@ -70,13 +73,18 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
                     if (Console.KeyAvailable) // sets key calls for the different move strats
                     {
                         var key = Console.ReadKey(true).Key;
-                       
-                        if (key == ConsoleKey.M) enemy.Move();
+
+                        if (key == ConsoleKey.M)
+                        {
+                            enemy.Move();
+                            DrawPlayer();
+                            DrawEnemy();
+                        }
                         else if (key == ConsoleKey.I) enemy._moveStrategy = aggressive;
                         else if (key == ConsoleKey.O) enemy._moveStrategy = random;
                         else if (key == ConsoleKey.P) enemy._moveStrategy = defensive;
-                       // else if (key == ConsoleKey.Escape) break;
-                        else if (key == ConsoleKey.Escape) isPlaying = false;
+                        else if (key == ConsoleKey.Escape) break;
+                        //else if (key == ConsoleKey.Escape) isPlaying = false;//Quit the 'is playing' loop
                         Console.SetCursorPosition(2, 21);
                         Console.ForegroundColor = ConsoleColor.DarkYellow;
                         Console.Write($"player location ");
@@ -93,10 +101,19 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
                     }
                 }
 
-               
+                ConsoleKey GetKey = default;
+                if (GetKey == ConsoleKey.Q)
+                {
+
+                    // isPlaying = false;//Quit the 'is playing' loop
+                    Console.ForegroundColor = ConsoleColor.White;
+                    Console.WriteLine($"\n you  have  chosen to  exit  sorry to see you go... ");
+                    Console.ReadKey(true);
+                    Environment.Exit(0);
+                }
             }
          
-        }
+       // }
 
        static void DrawPlayer()
        {
@@ -111,19 +128,30 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
            
         }
 
-        static void DrawEnemy()
+       public static void DrawEnemy()
         {
             IMoveStrategy aggressive = new AgressiveMoveStrategy(); //sets new agresive move strat
             IMoveStrategy defensive = new DefensiveMoveStrategy();  // sets new passive movew strat
             IMoveStrategy random = new RandomMoveStrategy();//sets new ranndom move strat
 
-            Enemy enemy = new Enemy(new Position(0, 0), ConsoleColor.Red, random); // sets enemy spawn and colour and preset movement style
-           
+            Enemy enemy = new Enemy(new Position(nextX, nextY), ConsoleColor.Red, random); // sets enemy spawn and colour and preset movement style
+
+
+            //Position.x == nextX;
+            //Position.y == nextY;
+            //enemy.x == nextX;
+            //enemy.y == nextY;
+            //enemy.Position.x == nextX;
+            //enemy.Position.y == nextY;
+
+
             Console.SetCursorPosition(enemy.Position.x, enemy.Position.y);
 
             Console.ForegroundColor = enemy.Color;
 
             Console.Write("#");
+
+
 
         }
 

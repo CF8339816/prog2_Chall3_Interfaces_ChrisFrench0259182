@@ -14,8 +14,8 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
 
             maxX = 11;
             maxY = 11; 
-            int nextX = pos.x + _rando.Next(-1, 2); //randomises mocve 
-            int nextY = pos.y + _rando.Next(-1, 2);
+            int nextX = pos.x + _rando.Next(-1, 2); //randomises mocve on x
+            int nextY = pos.y + _rando.Next(-1, 2); // randomises moves on y
 
           
             nextX = Math.Max(0, Math.Min(nextX, maxX - 1));// checks againt max limits
