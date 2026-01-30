@@ -24,6 +24,7 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
             if (nextY >= maxY) nextY = maxY - 1;
 
             return new Position(nextX, nextY);
+            
         }
     }
 }

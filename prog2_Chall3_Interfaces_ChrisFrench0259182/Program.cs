@@ -2,22 +2,29 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace prog2_Chall3_Interfaces_ChrisFrench0259182
 {
     class Program
-    {
+    { 
+        
+        public static int maxX = 11; //sets max  x range 
+        public static int maxY = 11; // sets max  y range 
+        
         public static Player player = new Player(new Position(10, 10), ConsoleColor.Green); // sets player spawn and colouur
        
-        
         
         //public static ConsoleColor[] spriteColors = { ConsoleColor.Cyan, ConsoleColor.Red};
 
         static void Main()
         {
-         
+            //Console.WriteLine($"{Player}");
+            //Console.WriteLine($"{enemy}");
+            
+
             IMoveStrategy aggressive = new AgressiveMoveStrategy(); //sets new agresive move strat
             IMoveStrategy passive = new PassiveMoveStrategy();  // sets new passive movew strat
             IMoveStrategy random = new RandomMoveStrategy();//sets new ranndom move strat

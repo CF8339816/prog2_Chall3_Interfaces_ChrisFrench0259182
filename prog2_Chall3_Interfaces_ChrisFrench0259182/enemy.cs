@@ -10,6 +10,7 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
     public class Enemy
     {
         public Position Position;
+       // public EnemyPosition(int, int);
         public ConsoleColor Color;
         public IMoveStrategy _moveStrategy;
         //public int enemy_x_pos;
@@ -26,6 +27,7 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
             Position = position;
             Color = color;
             _moveStrategy = strategy;
+            Console.Write(" ");
         }
 
         public void Move()
@@ -48,17 +50,28 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
             //}
             Position = _moveStrategy.Move(Position, Console.WindowWidth, Console.WindowHeight); // checks enemy movement against established boundaries
         }
-        //public void EraseEnemy()
-        //{
-        //    enemy_Old_X = enemy_x_pos;
-        //    enemy_Old_Y = enemy_y_pos;
+            public int x;
+            public int y;
+        
+           //// public EnemyPosition(int x, int y)// gets the player position
+           // {
+           //     this.x = x;
+           //     this.y = y;
+           // }
 
-        //    int mapX = enemy_Old_X;
-        //    int mapY = enemy_Old_Y;
+            //public void DrawEnemy()
+            //{
 
-          
-        //    Console.SetCursorPosition(enemy_x_pos, enemy_y_pos);
-        //}
+            //    Console.SetCursorPosition(next.X, next.Y);
+
+
+            //    Console.Write(" ");
+
+
+
+            //}
+        }
+
     }
-}
+
 

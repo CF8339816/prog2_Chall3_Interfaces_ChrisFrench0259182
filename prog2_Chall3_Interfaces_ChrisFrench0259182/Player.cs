@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace prog2_Chall3_Interfaces_ChrisFrench0259182
 {
-   
+
     public class Player
     {
         public Position Position;
@@ -19,12 +19,14 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
         //public (int, int) p1_min_max_y = (1, 29);
         //public int p1_Old_X;
         //public int p1_Old_Y;
+            
 
 
         public Player(Position position, ConsoleColor color)// established variables for  player locaTIUON AND COLOUR
         {
             Position = position;
             Color = color;
+            Console.Write(" ");
         }
     }
 
@@ -39,17 +41,18 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
             this.x = x;
             this.y = y;
         }
+
+        //public void DrawPlayer()
+        //{
+
+        //    Console.SetCursorPosition(this.x, this.y);
+
+          
+        //    Console.Write(" ");
+
+
+
+        //}
     }
-    //public void DrawPlayer()
-    //    {
-
-    //        Console.SetCursorPosition(p1_x_pos, p1_y_pos);
-
-    //        Console.ForegroundColor = color;
-    //        Console.Write("&");
-
-    //        Console.ResetColor();
-
-    //    }
-    }
+}
 

@@ -11,8 +11,8 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
     {
         public Position Move(Position currentPos, int maxX, int maxY)// sets up passive movement strat
         {
-            int nextX = currentPos.x;
-            int nextY = currentPos.y;
+            int nextX = currentPos.x - 1;
+            int nextY = currentPos.y - 1;
 
          
             if (nextX < 0) nextX = 0;// checks againt max limits
