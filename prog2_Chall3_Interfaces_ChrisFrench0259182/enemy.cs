@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,9 +12,17 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
         public Position Position;
         public ConsoleColor Color;
         public IMoveStrategy _moveStrategy;
-
+        //public int enemy_x_pos;
+        //public int enemy_y_pos;
+        //public int enemy_Old_X;
+        //public int enemy_Old_Y;
+        //public (int, int) enemy_min_max_x = (15, 35);
+        //public (int, int) enemy_min_max_y = (12, 29);
+        
+       // public (int,int) location = (enemy_x_pos, enemy_y_pos);
         public Enemy(Position position, ConsoleColor color, IMoveStrategy strategy) //setsenemy positioon , colour , and the  movement strat usedd
         {
+            
             Position = position;
             Color = color;
             _moveStrategy = strategy;
@@ -21,9 +30,35 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
 
         public void Move()
         {
-          
+            //if (p1_x_pos > enemy_x_pos)
+            //{
+            //    enemy_x_pos++;
+            //}
+            //if (p1_x_pos < enemy_x_pos)
+            //{
+            //    enemy_x_pos--;
+            //}
+            //if (p1_y_pos > enemy_y_pos)
+            //{
+            //    enemy_y_pos++;
+            //}
+            //if (p1_y_pos < enemy_y_pos)
+            //{
+            //    enemy_y_pos--;
+            //}
             Position = _moveStrategy.Move(Position, Console.WindowWidth, Console.WindowHeight); // checks enemy movement against established boundaries
         }
+        //public void EraseEnemy()
+        //{
+        //    enemy_Old_X = enemy_x_pos;
+        //    enemy_Old_Y = enemy_y_pos;
+
+        //    int mapX = enemy_Old_X;
+        //    int mapY = enemy_Old_Y;
+
+          
+        //    Console.SetCursorPosition(enemy_x_pos, enemy_y_pos);
+        //}
     }
 }
 

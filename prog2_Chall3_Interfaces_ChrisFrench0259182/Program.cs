@@ -10,6 +10,10 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
     class Program
     {
         public static Player player = new Player(new Position(10, 10), ConsoleColor.Green); // sets player spawn and colouur
+       
+        
+        
+        //public static ConsoleColor[] spriteColors = { ConsoleColor.Cyan, ConsoleColor.Red};
 
         static void Main()
         {
@@ -19,7 +23,7 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
             IMoveStrategy random = new RandomMoveStrategy();//sets new ranndom move strat
 
             Enemy enemy = new Enemy(new Position(0, 0), ConsoleColor.Red, passive); // sets enemy spawn and colour and preset movement style
-
+            Console.SetCursorPosition( 2, 14);
             Console.ForegroundColor = ConsoleColor.DarkYellow;
             Console.Write("press:\n ");
             Console.ForegroundColor = ConsoleColor.Blue;
@@ -49,13 +53,13 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
                 if (Console.KeyAvailable) // sets key calls for the different move strats
                 {
                     var key = Console.ReadKey(true).Key;
-
+                    Console.SetCursorPosition(2, 21);
                     if (key == ConsoleKey.M) enemy.Move();
                     else if (key == ConsoleKey.I) enemy._moveStrategy = aggressive;
                     else if (key == ConsoleKey.O) enemy._moveStrategy = passive;
                     else if (key == ConsoleKey.P) enemy._moveStrategy = random;
                     else if (key == ConsoleKey.Escape) break;
-
+                    Console.SetCursorPosition( 2, 21);
                     Console.ForegroundColor = ConsoleColor.DarkYellow;
                     Console.Write($"enemy location ");
                     Console.ForegroundColor = ConsoleColor.Blue;
@@ -67,5 +71,23 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
                 }
             }
         }
+
+        //static void DrawPlayer()
+        //{
+
+        //    Console.SetCursorPosition(p1_x_pos, p1_y_pos);
+
+        //    Console.ForegroundColor = spriteColors[0];
+        //    Console.Write("&");
+
+        //    Console.ResetColor();
+
+        //}
+
+
+
+
+
+
     }
 }
