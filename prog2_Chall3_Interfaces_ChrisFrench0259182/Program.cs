@@ -14,10 +14,10 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
         
         public static int maxX = 11; //sets max  x range 
         public static int maxY = 11; // sets max  y range 
-        public static int nextX;
+        public static int nextX; 
         public static int nextY;
         //  static bool isPlaying = true;
-
+       
 
 
 
@@ -134,7 +134,7 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
             IMoveStrategy defensive = new DefensiveMoveStrategy();  // sets new passive movew strat
             IMoveStrategy random = new RandomMoveStrategy();//sets new ranndom move strat
 
-            Enemy enemy = new Enemy(new Position(nextX, nextY), ConsoleColor.Red, random); // sets enemy spawn and colour and preset movement style
+            Enemy enemy = new Enemy(new Position(0, 0), ConsoleColor.Red, random); // sets enemy spawn and colour and preset movement style
 
 
             //Position.x == nextX;
