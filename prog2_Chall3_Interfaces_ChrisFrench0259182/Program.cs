@@ -118,7 +118,7 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
             IMoveStrategy random = new RandomMoveStrategy();//sets new ranndom move strat
 
             Enemy enemy = new Enemy(new Position(0, 0), ConsoleColor.Red, random); // sets enemy spawn and colour and preset movement style
-            //Console.WriteLine(enemy);
+           
             Console.SetCursorPosition(enemy.Position.x, enemy.Position.y);
 
             Console.ForegroundColor = enemy.Color;

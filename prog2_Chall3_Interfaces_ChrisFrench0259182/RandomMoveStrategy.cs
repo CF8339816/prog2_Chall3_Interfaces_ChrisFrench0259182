@@ -11,7 +11,9 @@ namespace prog2_Chall3_Interfaces_ChrisFrench0259182
         private Random _rando = new Random();
         public Position Move(Position pos, int maxX, int maxY)
         {
-           
+
+            maxX = 11;
+            maxY = 11; 
             int nextX = pos.x + _rando.Next(-1, 2); //randomises mocve 
             int nextY = pos.y + _rando.Next(-1, 2);
 
