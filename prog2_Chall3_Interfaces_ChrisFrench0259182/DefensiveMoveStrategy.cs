@@ -7,7 +7,7 @@ using static System.Net.Mime.MediaTypeNames;
 
 namespace prog2_Chall3_Interfaces_ChrisFrench0259182
 {
-    public class PassiveMoveStrategy : IMoveStrategy
+    public class DefensiveMoveStrategy : IMoveStrategy
     {
         public Position Move(Position currentPos, int maxX, int maxY)// sets up passive movement strat
         {

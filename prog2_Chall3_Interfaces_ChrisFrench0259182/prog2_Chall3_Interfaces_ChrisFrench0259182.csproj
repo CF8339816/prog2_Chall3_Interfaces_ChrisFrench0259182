@@ -46,7 +46,7 @@
     <Compile Include="enemy.cs" />
     <Compile Include="AgressiveMoveStrategy.cs" />
     <Compile Include="IMoveStrategy.cs" />
-    <Compile Include="PassiveMoveStrategy.cs" />
+    <Compile Include="DefensiveMoveStrategy.cs" />
     <Compile Include="RandomMoveStrategy.cs" />
     <Compile Include="Player.cs" />
     <Compile Include="Program.cs" />
